@@ -22,7 +22,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar Styles */
+/* Navbar Styles with Glassmorphism */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -32,14 +32,20 @@ body {
   width: 100%;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
-  background: transparent;
+  transition: all 0.4s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   padding: 1rem 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .logo {
@@ -92,6 +98,278 @@ body {
   box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
 }
 
+/* Design Sections */
+#design-styles {
+  padding: 4rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.style-section {
+  margin: 6rem 0;
+  padding: 3rem 0;
+  border-radius: 20px;
+  position: relative;
+}
+
+.style-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 2rem;
+  background: white;
+  z-index: 1;
+}
+
+.design-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.design-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.design-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.design-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  color: inherit;
+}
+
+.design-card button {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+/* Neumorphism */
+.neumorphism {
+  background: #f0f0f0;
+}
+
+.neumorphism .design-container {
+  background: #f0f0f0;
+  box-shadow: 20px 20px 60px #cccccc, -20px -20px 60px #ffffff;
+}
+
+.neumorphism .design-card {
+  background: #f0f0f0;
+  box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+
+.neumorphism button {
+  background: #f0f0f0;
+  color: #333;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+}
+
+.neumorphism button:active {
+  box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+
+/* Skeuomorphism */
+.skeuomorphism {
+  background: #e0e0e0;
+}
+
+.skeuomorphism .design-container {
+  background: #e0e0e0;
+  border: 1px solid #d0d0d0;
+  box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.skeuomorphism .design-card {
+  background: #e0e0e0;
+  border: 1px solid #d0d0d0;
+  border-top: 1px solid #f0f0f0;
+  border-left: 1px solid #f0f0f0;
+}
+
+.skeuomorphism button {
+  background: linear-gradient(145deg, #d1d1d1, #f8f8f8);
+  border: 1px solid #d0d0d0;
+  color: #555;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+  box-shadow: 3px 3px 5px #bebebe, -3px -3px 5px #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeuomorphism button:active {
+  background: linear-gradient(145deg, #c7c7c7, #e8e8e8);
+  box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #ffffff;
+}
+
+/* Bauhaus */
+.bauhaus {
+  background: #ffffff;
+  padding: 4rem 0;
+}
+
+.bauhaus .design-container {
+  background: #ffffff;
+  border: 3px solid #000000;
+  position: relative;
+  padding: 3rem;
+}
+
+.bauhaus .design-container::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: -10px;
+  bottom: -10px;
+  background: #ff6b6b;
+  z-index: -1;
+  border: 3px solid #000000;
+}
+
+.bauhaus .design-card {
+  background: #ffffff;
+  color: #000000;
+  padding: 0;
+}
+
+.bauhaus button {
+  background: #000000;
+  color: #ffffff;
+  border: 3px solid #000000;
+  padding: 0.7rem 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bauhaus button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ff6b6b;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.bauhaus button:hover::before {
+  left: 0;
+}
+
+/* Neobrutalism */
+.neobrutalism {
+  background: #ffd700;
+  padding: 4rem 0;
+}
+
+.neobrutalism .design-container {
+  background: #ffffff;
+  border: 3px solid #000000;
+  box-shadow: 8px 8px 0 #000000;
+  transform: rotate(-1deg);
+}
+
+.neobrutalism .design-card {
+  background: #ffffff;
+  color: #000000;
+  padding: 2rem;
+  border: 3px solid #000000;
+  transform: rotate(1deg);
+}
+
+.neobrutalism button {
+  background: #000000;
+  color: #ffffff;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  transform: rotate(-1deg);
+  transition: all 0.2s;
+}
+
+.neobrutalism button:active {
+  transform: translate(4px, 4px) rotate(-1deg);
+  box-shadow: 0 0 0 #000000;
+}
+
+/* Claymorphism */
+.claymorphism {
+  background: #f0f4f8;
+}
+
+.claymorphism .design-container {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px rgba(163, 177, 198, 0.5),
+              -10px -10px 30px rgba(255, 255, 255, 0.8);
+}
+
+.claymorphism .design-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 5px 5px 15px rgba(163, 177, 198, 0.3),
+              -5px -5px 15px rgba(255, 255, 255, 0.6);
+}
+
+.claymorphism button {
+  background: linear-gradient(145deg, #6c63ff, #5a52e0);
+  color: white;
+  border: none;
+  box-shadow: 5px 5px 15px rgba(108, 99, 255, 0.3),
+              -5px -5px 15px rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.claymorphism button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #5a52e0, #6c63ff);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.claymorphism button:hover::before {
+  opacity: 1;
+}
+
+.claymorphism button span {
+  position: relative;
+  z-index: 1;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -119,6 +397,13 @@ body {
   max-width: 600px;
   z-index: 2;
   animation: fadeInUp 1s ease-out;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .hero-title {
@@ -156,25 +441,51 @@ body {
 }
 
 .primary-button {
-  background: var(--accent-color);
+  background: rgba(255, 255, 255, 0.2);
   color: white;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.primary-button:hover::before {
+  left: 100%;
 }
 
 .primary-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 20px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .secondary-button {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 .secondary-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-image {
@@ -187,10 +498,14 @@ body {
 
 .floating-shape {
   position: absolute;
-  border-radius: 50%;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  animation: float 8s ease-in-out infinite;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  animation: float 15s ease-in-out infinite;
+  transition: all 0.5s ease;
 }
 
 .floating-shape.shape-2 {
@@ -199,7 +514,12 @@ body {
   top: 20%;
   right: 10%;
   animation-delay: 1s;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+  background: linear-gradient(45deg, 
+    rgba(108, 99, 255, 0.1), 
+    rgba(255, 107, 107, 0.1)
+  );
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: float 12s ease-in-out infinite alternate;
 }
 
 .floating-shape.shape-3 {
@@ -208,16 +528,31 @@ body {
   bottom: 20%;
   right: 30%;
   animation-delay: 2s;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.15));
+  background: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.05), 
+    rgba(255, 255, 255, 0.15)
+  );
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: float 18s ease-in-out infinite reverse;
 }
 
 /* Animations */
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
-  50% {
-    transform: translateY(-20px) rotate(5deg);
+  33% {
+    transform: translate(10px, -15px) rotate(5deg);
+    border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+  }
+  66% {
+    transform: translate(-10px, 15px) rotate(-5deg);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
 }
 
